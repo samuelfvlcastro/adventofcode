@@ -1,41 +1,19 @@
-package main
+package day1
 
 import (
-	"aoc/2023/utils"
-	"fmt"
-	"log"
 	"strconv"
 	"strings"
 	"unicode"
 )
 
-// Day1: https://adventofcode.com/2023/day/1
-func main() {
-	partOne()
-	partTwo()
-}
-
 // The newly-improved calibration document consists of lines of text;
 // each line originally contained a specific calibration value that the Elves now need to recover.
-// On each line, the calibration value can be found by combining the first digit and the last digit (in that order) to form a single two-digit number.
-//
-// For example:
-//
-//	1abc2
-//	pqr3stu8vwx
-//	a1b2c3d4e5f
-//	treb7uchet
-//
-// In this example, the calibration values of these four lines are 12, 38, 15, and 77.
-// Adding these together produces 142.
-// Resp: 54644
-func partOne() {
-	input, err := utils.FetchInput("./input.txt")
-	if err != nil {
-		log.Fatal(err)
-	}
+// On each line, the calibration value can be found by combining the first digit and the last digit (in that order)
+// to form a single two-digit number.
+func partOne(lines []string) int {
+
 	total := 0
-	for _, line := range input {
+	for _, line := range lines {
 		chars := []rune(line)
 
 		left := 0
@@ -62,30 +40,15 @@ func partOne() {
 		numb, _ := strconv.Atoi(lNumb + rNumb)
 		total += numb
 	}
-	fmt.Println(total)
+	return total
 }
 
 // Your calculation isn't quite right.
-// It looks like some of the digits are actually spelled out with letters: one, two, three, four, five, six, seven, eight, and nine also count as valid "digits".
-//
-// Equipped with this new information, you now need to find the real first and last digit on each line. For example:
-// two1nine
-// eightwothree
-// abcone2threexyz
-// xtwone3four
-// 4nineeightseven2
-// zoneight234
-// 7pqrstsixteen
-// In this example, the calibration values are 29, 83, 13, 24, 42, 14, and 76. Adding these together produces 281.
-// Resp: 53348
-func partTwo() {
-	input, err := utils.FetchInput("input.txt")
-	if err != nil {
-		log.Fatal(err)
-	}
-
+// It looks like some of the digits are actually spelled out with letters:
+// one, two, three, four, five, six, seven, eight, and nine also count as valid "digits".
+func partTwo(lines []string) int {
 	total := 0
-	for _, line := range input {
+	for _, line := range lines {
 		chars := []rune(line)
 
 		l := 0
@@ -125,7 +88,8 @@ func partTwo() {
 		numb, _ := strconv.Atoi(lNumb + rNumb)
 		total += numb
 	}
-	fmt.Println(total)
+
+	return total
 }
 
 var strToNumbMap = map[string]string{

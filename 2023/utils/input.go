@@ -5,10 +5,10 @@ import (
 	"os"
 )
 
-func FetchInput(path string) ([]string, error) {
+func MustFetchInput(path string) []string {
 	file, err := os.Open(path)
 	if err != nil {
-		return []string{}, nil
+		return []string{}
 	}
 	defer file.Close()
 
@@ -18,5 +18,5 @@ func FetchInput(path string) ([]string, error) {
 		input = append(input, scanner.Text())
 	}
 
-	return input, nil
+	return input
 }

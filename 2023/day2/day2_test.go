@@ -314,7 +314,7 @@ func TestPart2(t *testing.T) {
 		},
 		{
 			lines:    utils.MustFetchInput("./input.txt"),
-			expected: 8,
+			expected: 66909,
 		},
 	}
 

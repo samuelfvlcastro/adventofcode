@@ -10,7 +10,7 @@ import (
 // each line originally contained a specific calibration value that the Elves now need to recover.
 // On each line, the calibration value can be found by combining the first digit and the last digit (in that order)
 // to form a single two-digit number.
-func partOne(lines []string) int {
+func part1(lines []string) int {
 	total := 0
 	for _, line := range lines {
 		chars := []rune(line)
@@ -45,7 +45,7 @@ func partOne(lines []string) int {
 // Your calculation isn't quite right.
 // It looks like some of the digits are actually spelled out with letters:
 // one, two, three, four, five, six, seven, eight, and nine also count as valid "digits".
-func partTwo(lines []string) int {
+func part2(lines []string) int {
 	total := 0
 	for _, line := range lines {
 		chars := []rune(line)

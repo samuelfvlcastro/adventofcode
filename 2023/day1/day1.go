@@ -11,7 +11,6 @@ import (
 // On each line, the calibration value can be found by combining the first digit and the last digit (in that order)
 // to form a single two-digit number.
 func partOne(lines []string) int {
-
 	total := 0
 	for _, line := range lines {
 		chars := []rune(line)

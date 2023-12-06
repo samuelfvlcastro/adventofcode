@@ -194,7 +194,7 @@ func TestPart1(t *testing.T) {
 
 	for i, test := range tests {
 		t.Run(fmt.Sprintf("part1 - test: %d", i), func(t *testing.T) {
-			total := Part1(test.lines)
+			total := part1(test.lines)
 			assert.Equal(t, test.expected, total)
 		})
 	}
@@ -251,7 +251,7 @@ func TestPart2(t *testing.T) {
 
 	for i, test := range tests {
 		t.Run(fmt.Sprintf("part1 - test: %d", i), func(t *testing.T) {
-			total := Part2(test.lines)
+			total := part2(test.lines)
 			assert.Equal(t, test.expected, total)
 		})
 	}

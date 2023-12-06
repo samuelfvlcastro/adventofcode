@@ -27,12 +27,12 @@ type almanac struct {
 	humidityToLocation    []mapping
 }
 
-func Part1(lines []string) int {
+func part1(lines []string) int {
 	alma := parseAlmanac(lines, false)
 	return findMinLocation(alma)
 }
 
-func Part2(lines []string) int {
+func part2(lines []string) int {
 	alma := parseAlmanac(lines, true)
 	return findMinLocation(alma)
 }
